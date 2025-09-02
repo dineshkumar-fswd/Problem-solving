@@ -8,7 +8,7 @@ function fibonacci(n) {
     [a, b] = [b, a + b]; // swap logic
   }
 
-  console.log(series.trim());
+  console.log(series);
 }
 
 fibonacci(10);

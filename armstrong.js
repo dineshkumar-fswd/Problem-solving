@@ -11,7 +11,7 @@ function isArmstrong(num) {
 
   // loop through each digit
   for (let d of digits) {
-    sum += d ** power; // add digit^power to sum
+    sum += d ** power; // add digit^power to sums
   }
 
   if (sum === num) {

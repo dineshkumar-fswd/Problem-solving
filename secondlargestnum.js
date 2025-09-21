@@ -7,4 +7,4 @@ let sorted = a.sort((x, y) => y - x);
 let secondLargest = sorted.at(1);
 console.log("Second Largest:", secondLargest);
 console.log(sorted);
-console.log(b.at(-1));
+console.log(b.at(-2));

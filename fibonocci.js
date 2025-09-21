@@ -4,7 +4,7 @@ function fibonacci(n) {
   let series = "";
 
   for (let i = 0; i < n; i++) {
-    series += a + " ";
+    series += a + ",";
     [a, b] = [b, a + b]; // swap logic
   }
 

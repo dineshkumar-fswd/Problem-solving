@@ -1,37 +1,17 @@
-let arr = [4, 6, 2, 6, 4, 4, 7];
+let arr = [4, 2, 4, 3, 4, 3, 5, 1, 6];
 
-// Step 1: Count frequency
-let freq = [];
-for (let i = 0; i < arr.length; i++) {
-  let num = arr[i];
-  if (freq[num] === undefined) {
-    freq[num] = 1;
-  } else {
-    freq[num]++;
+// Step 1: Count frequency of each number
+let freq = {};
+for (let num of arr) {
+  freq[num] = (freq[num] || 0) + 1;
+}
+console.log(freq);
+// Step 2: Sort based on frequency (high → low)
+arr.sort((a, b) => {
+  if (freq[b] === freq[a]) {
+    return arr.indexOf(a) - arr.indexOf(b); // keep original order
   }
-}
+  return freq[b] - freq[a];
+});
 
-// Step 2: Put into new array based on frequency (highest first)
-let result = [];
-
-// 4 appears 3 times
-for (let i = 0; i < freq[4]; i++) {
-  result.push(4);
-}
-
-// 6 appears 2 times
-for (let i = 0; i < freq[6]; i++) {
-  result.push(6);
-}
-
-// 2 appears 1 time
-for (let i = 0; i < freq[2]; i++) {
-  result.push(2);
-}
-
-// 7 appears 1 time
-for (let i = 0; i < freq[7]; i++) {
-  result.push(7);
-}
-
-console.log(result); // [4,4,4,6,6,2,7]
+console.log(arr); // Output: [4, 4, 4, 3, 3, 2, 5, 1, 6]

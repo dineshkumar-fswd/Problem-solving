@@ -1,15 +1,11 @@
-function fibonacci(n) {
-  let a = 0,
-    b = 1;
-  let series = "";
-
+function fibonocci(n) {
+  let a = 0;
+  let b = 1;
+  let series = " ";
   for (let i = 0; i < n; i++) {
-    series += a + ",";
-    [a, b] = [b, a + b]; // swap logic
+    series = series + a + ",";
+    [a, b] = [b, a + b];
   }
-
-  console.log(series);
+  return series;
 }
-
-fibonacci(10);
-// Output: 0 1 1 2 3 5 8 13 21 34
+console.log(fibonocci(10));
